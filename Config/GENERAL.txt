@@ -1,3 +1,11 @@
+#预设
+CONFIG_PACKAGE_luci-app-eqos-mtk=y
+CONFIG_PACKAGE_luci-i18n-eqos-mtk-zh-cn=y
+CONFIG_PACKAGE_luci-app-mtwifi-cfg=y
+CONFIG_PACKAGE_luci-i18n-mtwifi-cfg-zh-cn=y
+CONFIG_PACKAGE_luci-app-turboacc-mtk=y
+CONFIG_PACKAGE_luci-i18n-turboacc-mtk-zh-cn=y
+CONFIG_PACKAGE_luci-app-wrtbwmon=y
 #科学插件调整
 CONFIG_PACKAGE_luci-app-homeproxy=y
 CONFIG_PACKAGE_luci-app-openclash=y
@@ -345,3 +353,4 @@ CONFIG_WARP_NEW_FW=y
 CONFIG_WARP_VERSION=2
 
 CONFIG_WED_HW_RRO_SUPPORT=y
+
