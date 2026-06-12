@@ -82,11 +82,12 @@ UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
 
 UPDATE_PACKAGE "design" "0x676e67/luci-theme-design" "js"
 UPDATE_PACKAGE "material3" "KawaiiHachimi/luci-theme-material3" "main"
-#UPDATE_PACKAGE "homeproxy-hiddify" "1andrevich/homeproxy-hiddify" "master"
-#UPDATE_PACKAGE "hiddify-core" "1andrevich/hiddify-core" "main"
 UPDATE_PACKAGE "luci-app-lucky" "gdy666/luci-app-lucky" "main"
 UPDATE_PACKAGE "luci-app-podman" "Zerogiven-OpenWRT-Packages/luci-app-podman" "main"
 UPDATE_PACKAGE "open-app-filter" "destan19/OpenAppFilter" "master" "" "luci-app-appfilter oaf"
+UPDATE_PACKAGE "openwrt-clashoo" "kenzok8/openwrt-clashoo" "main"
+UPDATE_PACKAGE "openwrt-bandix-plus" "timsaya/openwrt-bandix-plus" "main" "openwrt-bandix-plus"
+UPDATE_PACKAGE "luci-app-bandix-plus" "timsaya/luci-app-bandix-plus" "main" "luci-app-bandix-plus"
 
 #更新软件包版本
 UPDATE_VERSION() {
