@@ -158,7 +158,7 @@ function git_sparse_clone() {
 git_sparse_clone master https://github.com/kenzok8/openwrt-packages luci-app-easymesh
 
 # 移除 OpenWrt Feeds 自带的核心库
-rm -rf feeds/packages/net/{dns2tcp dnsproxy simple-obfs}
+# rm -rf feeds/packages/net/{dns2tcp dnsproxy simple-obfs}
 # 移除 OpenWrt Feeds 过时的LuCI版本
-rm -rf feeds/luci/applications/luci-app-ssr-plus
-git_sparse_clone dev https://github.com/fw876/helloworld dns2tcp dnsproxy luci-app-ssr-plus mihomo simple-obfs
+# rm -rf feeds/luci/applications/luci-app-ssr-plus
+# git_sparse_clone dev https://github.com/fw876/helloworld dns2tcp dnsproxy luci-app-ssr-plus mihomo simple-obfs
