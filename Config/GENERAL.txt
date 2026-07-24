@@ -4,11 +4,11 @@ CONFIG_PACKAGE_luci-app-aurora-config=y
 CONFIG_PACKAGE_luci-theme-shadcn=y
 #科学插件调整
 #CONFIG_PACKAGE_luci-app-homeproxy=y
-CONFIG_PACKAGE_luci-app-ssr-plus=y
-CONFIG_PACKAGE_luci-app-ssr-plus_Iptables_Transparent_Proxy=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_DNS2TCP=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Mihomo=y
+#CONFIG_PACKAGE_luci-app-ssr-plus=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_Iptables_Transparent_Proxy=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_DNS2TCP=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Mihomo=y
 #增加插件
 CONFIG_PACKAGE_luci-app-autoreboot=y
 CONFIG_PACKAGE_luci-app-cpufreq=y
