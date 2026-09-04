@@ -81,6 +81,14 @@ UPDATE_PACKAGE "airpi3000m" "LianXia233/luci-app-airpi3000m-fancontrol" "main"
 UPDATE_PACKAGE "h5000m" "LianXia233/luci-app-h5000m-netmode" "main"
 UPDATE_PACKAGE "qmodem-generic" "LianXia233/luci-app-qmodem-generic" "main"
 
+#UPDATE_PACKAGE "helloworld" "fw876/helloworld" "dev" "" "dns2tcp dnsproxy luci-app-ssr-plus mihomo simple-obfs"
+#UPDATE_PACKAGE "luci-app-lucky" "gdy666/luci-app-lucky" "main"
+#UPDATE_PACKAGE "luci-app-podman" "Zerogiven-OpenWRT-Packages/luci-app-podman" "main"
+UPDATE_PACKAGE "open-app-filter" "destan19/OpenAppFilter" "master" "" "luci-app-appfilter oaf"
+UPDATE_PACKAGE "openwrt-bandix-plus" "timsaya/openwrt-bandix-plus" "main" "openwrt-bandix-plus"
+UPDATE_PACKAGE "luci-app-bandix-plus" "timsaya/luci-app-bandix-plus" "main" "luci-app-bandix-plus"
+#UPDATE_PACKAGE "luci-app-airoha-npu" "bingoguo93/luci-app-airoha-npu" "main"
+
 #更新软件包版本
 UPDATE_VERSION() {
 	local PKG_NAME=$1
@@ -129,3 +137,28 @@ UPDATE_VERSION() {
 if [ -f "$GITHUB_WORKSPACE/Scripts/PRIVATE.sh" ]; then
 	source "$GITHUB_WORKSPACE/Scripts/PRIVATE.sh"
 fi
+# Git稀疏克隆，只克隆指定目录到本地
+function git_sparse_clone() {
+  local branch="$1"
+  local repourl="$2"
+  local repodir
+  shift 2
+
+  repodir="$(basename "${repourl%.git}")"
+  rm -rf "$repodir"
+  git clone --depth=1 -b "$branch" --single-branch --filter=blob:none --sparse "$repourl" "$repodir"
+  (
+    cd "$repodir"
+    git sparse-checkout set "$@"
+    mv -f "$@" ../package
+  )
+  rm -rf "$repodir"
+}
+
+git_sparse_clone master https://github.com/kenzok8/openwrt-packages luci-app-easymesh
+
+# 移除 OpenWrt Feeds 自带的核心库
+# rm -rf feeds/packages/net/{dns2tcp dnsproxy simple-obfs}
+# 移除 OpenWrt Feeds 过时的LuCI版本
+# rm -rf feeds/luci/applications/luci-app-ssr-plus
+# git_sparse_clone dev https://github.com/fw876/helloworld dns2tcp dnsproxy luci-app-ssr-plus mihomo simple-obfs
